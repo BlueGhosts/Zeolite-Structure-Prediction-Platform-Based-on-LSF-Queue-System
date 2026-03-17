@@ -1,0 +1,17 @@
+#!/bin/sh
+
+export FraGen=`pwd`
+filepath=${FraGen##*/}
+filepath=${filepath%.*}
+
+
+cd wyc 
+tar -cvf ../GULP_cif_$filepath.tar AllGULP_cif 
+tar -cvf ../LID_cif_$filepath.tar AllLID_cif
+cd ..
+
+tar -czvf FraGen_lsf_$filepath.tar.gz FraGen_lsf
+tar -czvf GetZeolite_lsf_$filepath.tar.gz GetZeolite_lsf
+
+
+tar -czvf zeolite_$filepath.tar.gz wyc 

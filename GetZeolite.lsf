@@ -1,0 +1,14 @@
+#!/bin/sh
+#BSUB -o GetZeolite_lsf/%J_GetZeolite.log
+#BSUB -q normal
+#BSUB -a intelmpi
+#BSUB -app normal
+
+#BSUB -J GetZeolite
+
+#BSUB -n 1
+
+echo "Please input the FileTitle"
+read FileTitle
+
+bash $FraGenCodes/GetZeolite_workflow/GetZeolite_workflow.sh $FileTitle

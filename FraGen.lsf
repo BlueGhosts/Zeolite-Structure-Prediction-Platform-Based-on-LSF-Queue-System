@@ -1,0 +1,11 @@
+#!/bin/sh
+#BSUB -o FraGen_lsf/%J_runFraGen.log
+#BSUB -q normal
+#BSUB -a intelmpi
+#BSUB -app normal
+#BSUB -J FraGen_run
+
+#BSUB -n 1
+
+
+bash $FraGenCodes/FraGen_workflow/workflow.sh
